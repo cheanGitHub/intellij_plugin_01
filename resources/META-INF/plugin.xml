@@ -1,0 +1,56 @@
+<idea-plugin>
+    <id>com.cc.plugin.intellij_plugin_01</id>
+    <name>intellij_plugin_01</name>
+    <version>1.0</version>
+    <vendor email="support@cc.com" url="http://www.cc.com">CC_Company</vendor>
+
+    <description><![CDATA[
+      Enter short description for your plugin here.<br>
+      <em>most HTML tags may be used</em>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+    </change-notes>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html for description -->
+    <idea-version since-build="174.0"/>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <!--<toolWindow id="MarkBookWindown"
+                    secondary="true"
+                    anchor="right" factoryClass="com.itheima.markbook.window.NoteListWindowFactory" icon="/markbook/pluginIcon.svg">
+        </toolWindow>-->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="TestAction_id"
+                class="com.cc.intellij.plugin.editgitexclude.action.TestAction"
+                text="TestAction Name"
+                description="TestAction desc">
+            <add-to-group group-id="ProjectViewPopupMenu"
+                          anchor="first"/><!-- ToolsMenu:Tools菜单  EditorPopupMenu:文件编辑右键菜单  EditorLangPopupMenu -->
+        </action>
+
+        <!--顶部菜单添加新分组示例-->
+        <!--下面的group是分组，分组需要有一个唯一的id标识，text用来控制分组出现在IDEA时呈现的文案，description是描述，不会展现出来，简单描述下分组就行-->
+        <!--<group id="PluginTest" text="插件测试组" description="插件测试描述">-->
+        <!--add-to-group控制把该分组加到IDEA里，group-id用来描述加在哪个位置，MainMenu表示加在IDEA上方的主菜单栏里，
+        anchor表示顺序，last表示最后一个，所以下面的配置可以描述为：将该插件加到IDEA上方主菜单栏的最后一位-->
+        <!--<add-to-group group-id="MainMenu" anchor="last"/>-->
+        <!--这个用来指定一个分组下的触发动作，同样的需要一个id，自定义；class就是用来处理这个动作的逻辑类，具体的插件逻辑都会写到对应的action类里，text用来控制文案，description为描述-->
+        <!--<action id="Plugin.Test.Action" class="plugin.test.FromAction" text="表单测试" description="表单测试描述"/>-->
+        <!--</group>-->
+    </actions>
+
+</idea-plugin>
